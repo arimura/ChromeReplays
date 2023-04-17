@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TSV to Chrome Replay JSON</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    pre {
+      width: 100%;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background-color: #f8f8f8;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>TSV to Chrome Replay JSON</h1>
+    <textarea id="tsvInput" rows="10" placeholder="Paste TSV here..."></textarea>
+    <button id="generateJsonButton">Generate Chrome Replay JSON</button>
+    <pre id="jsonOutput"></pre>
+  </div>
+
+  <script>
+    const tsvInput = document.getElementById('tsvInput');
+    const generateJsonButton = document.getElementById('generateJsonButton');
+    const jsonOutput = document.getElementById('jsonOutput');
+
+    function tsvToJson(tsv) {
+      // Replace this with your TSV to JSON conversion logic
+      return JSON.stringify({ tsv: tsv }, null, 2);
+    }
+
+    generateJsonButton.addEventListener('click', () => {
+      const tsv = tsvInput.value;
+      const json = tsvToJson(tsv);
+      jsonOutput.textContent = json;
+    });
+  </script>
+</body>
+</html>
