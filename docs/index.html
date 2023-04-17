@@ -26,7 +26,7 @@
       margin-bottom: 20px;
     }
 
-    textarea {
+    input, textarea {
       width: 100%;
       resize: none;
       padding: 10px;
@@ -64,6 +64,7 @@
 <body>
   <div class="container">
     <h1>TSV to Chrome Replay JSON</h1>
+    <input type="text" name="title" id="titleInput" placeholder="Enter title...">
     <textarea id="tsvInput" rows="10" placeholder="Paste TSV here..."></textarea>
     <button id="generateJsonButton">Generate Chrome Replay JSON</button>
     <pre id="jsonOutput"></pre>
