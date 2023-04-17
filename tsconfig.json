@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "system",
+      "target": "ES2017",
+      "lib": ["DOM", "ES2017"],
+      "outDir": "./docs",
+      "sourceMap": true,
+      "esModuleInterop": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+  }
+  
