@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
-      "module": "system",
-      "target": "ES2017",
-      "lib": ["DOM", "ES2017"],
-      "outDir": "./docs",
-      "sourceMap": true,
-      "esModuleInterop": true
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "esModuleInterop": true
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules"]
-  }
-  
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
