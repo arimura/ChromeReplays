@@ -1,6 +1,6 @@
 import { createAddingCustomEventReplySteps } from './adding-customevent-reply-steps';
 
-function createAddingCustomEventReplyJSON(title:string, tsv: string) {
+export function createAddingCustomEventReplyJSON(title:string, tsv: string) {
   const steps: any[] = [];
   const lines = tsv.split('\n');
 
