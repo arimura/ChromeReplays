@@ -26,7 +26,7 @@
       margin-bottom: 20px;
     }
 
-    textarea {
+    input, textarea {
       width: 100%;
       resize: none;
       padding: 10px;
@@ -64,11 +64,38 @@
 <body>
   <div class="container">
     <h1>TSV to Chrome Replay JSON</h1>
+    <input type="text" name="title" id="titleInput" placeholder="Enter title...">
     <textarea id="tsvInput" rows="10" placeholder="Paste TSV here..."></textarea>
     <button id="generateJsonButton">Generate Chrome Replay JSON</button>
+    <button id="downloadJsonButton" style="display:none">Download JSON</button>
     <pre id="jsonOutput"></pre>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const generateJsonButton = document.getElementById('generateJsonButton');
+    const downloadJsonButton = document.getElementById('downloadJsonButton');
+    const jsonOutput = document.getElementById('jsonOutput');
+
+    generateJsonButton.addEventListener('click', () => {
+      // Your code to convert TSV to JSON should be placed here
+      const json = { test: 'This is a sample JSON output.' };
+
+      jsonOutput.textContent = JSON.stringify(json, null, 2);
+      downloadJsonButton.style.display = 'block';
+    });
+
+    downloadJsonButton.addEventListener('click', () => {
+      const jsonText = jsonOutput.textContent;
+      const fileName = 'output.json';
+      const fileBlob = new Blob([jsonText], { type: 'application/json' });
+      const fileUrl = URL.createObjectURL(fileBlob);
+
+      const downloadLink = document.createElement('a');
+      downloadLink.href = fileUrl;
+      downloadLink.download = fileName;
+      downloadLink.click();
+      URL.revokeObjectURL(fileUrl);
+    });
+  </script>
 </body>
 </html>

@@ -1,2 +1,2 @@
 build:
-	tsc docs/script.ts
+	npm run build
