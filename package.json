@@ -4,6 +4,6 @@
     "tslib": "^2.5.0"
   },
   "scripts": {
-    "build": "esbuild src/admob/adding-customevent-replay.ts --bundle --platform=browser --outfile=docs/out.js --loader:.ts=ts"
+    "build": "esbuild src/admob/adding-customevent-replay.ts --bundle --platform=browser --outfile=docs/out.js --loader:.ts=ts --format=iife --global-name=chromeReplay"
   }
 }
