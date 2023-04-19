@@ -1,5 +1,6 @@
+"use strict";
 (() => {
-  // src/admob/adding-customevent-reply-steps.ts
+  // src/admob/adding-customevent-replay-steps.ts
   function createAddingCustomEventReplySteps(label, ecpm, mappingName, className, parameter) {
     return [
       {
@@ -291,7 +292,7 @@
     ];
   }
 
-  // src/admob/adding-customevent-reply.ts
+  // src/admob/adding-customevent-replay.ts
   function createAddingCustomEventReplyJSON(title, tsv) {
     const steps = [];
     const lines = tsv.split("\n");

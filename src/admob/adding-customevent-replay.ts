@@ -1,4 +1,4 @@
-import { createAddingCustomEventReplySteps } from './adding-customevent-reply-steps';
+import { createAddingCustomEventReplySteps } from './adding-customevent-replay-steps';
 
 export function createAddingCustomEventReplyJSON(title:string, tsv: string) {
   const steps: any[] = [];
