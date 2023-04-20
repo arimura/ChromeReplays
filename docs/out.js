@@ -318,20 +318,23 @@ var chromeReplay = (() => {
 
   // src/admob/adding-customevent-replay.ts
   function createAddingCustomEventReplyJSON(title, tsv) {
+    if (!title || title.trim().length === 0) {
+      return { error: "Title cannot be null or empty" };
+    }
     const steps = [];
     const lines = tsv.split("\n");
     lines.forEach((line) => {
       if (line.trim() === "")
         return;
       const [label, ecpm, mappingName, className, parameter] = line.split("	");
-      const steps2 = createAddingCustomEventReplySteps(
+      const stepsFromLine = createAddingCustomEventReplySteps(
         label.trim(),
         parseFloat(ecpm.trim()),
         mappingName.trim(),
         className.trim(),
         parameter.trim()
       );
-      steps2.push(...steps2);
+      steps.push(...stepsFromLine);
     });
     return {
       "title": title,
