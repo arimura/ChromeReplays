@@ -89,7 +89,7 @@
 
     downloadJsonButton.addEventListener('click', () => {
       const jsonText = jsonOutput.textContent;
-      const fileName = 'output.json';
+      const fileName = document.getElementById("titleInput").value + '.json';
       const fileBlob = new Blob([jsonText], { type: 'application/json' });
       const fileUrl = URL.createObjectURL(fileBlob);
 
