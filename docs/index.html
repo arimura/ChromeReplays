@@ -83,7 +83,7 @@
       console.log("title: " + title);
       console.log("tsv: " + tsv);
 
-      jsonOutput.textContent =  JSON.stringify(chromeReplay.createAddingCustomEventReplyJSON(title, tsv));
+      jsonOutput.textContent =  JSON.stringify(chromeReplay.createAddingCustomEventReplyJSON(title, tsv), null, 2);
       downloadJsonButton.style.display = 'block';
     });
 

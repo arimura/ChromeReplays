@@ -14,7 +14,7 @@ export function createAddingCustomEventReplyJSON(title:string, tsv: string) {
     const [label, ecpm, mappingName, className, parameter] = line.split('\t');
     const stepsFromLine = createAddingCustomEventReplySteps(
       label.trim(),
-      parseFloat(ecpm.trim()),
+      ecpm.trim(),
       mappingName.trim(),
       className.trim(),
       parameter.trim()

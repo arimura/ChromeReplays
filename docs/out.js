@@ -132,7 +132,7 @@ var chromeReplay = (() => {
         "target": "main",
         "selectors": [
           [
-            "#admob-overlay-container-inventory > div.pane._ngcontent-byz-25.modal.visible > material-dialog > focus-trap > div:nth-child(2) > div > div.main._ngcontent-byz-47.with-scroll-strokes > div > placement-settings-for-ad-source > div > div.placements._ngcontent-byz-56 > allocation-selection > div.allocation-field._ngcontent-byz-57.allocation-field-border > material-dropdown-select > dropdown-button"
+            '.allocation-field > material-dropdown-select > dropdown-button > div.button[aria-haspopup="listbox"][aria-invalid="false"]'
           ]
         ],
         "offsetY": 31.7265625,
@@ -329,7 +329,7 @@ var chromeReplay = (() => {
       const [label, ecpm, mappingName, className, parameter] = line.split("	");
       const stepsFromLine = createAddingCustomEventReplySteps(
         label.trim(),
-        parseFloat(ecpm.trim()),
+        ecpm.trim(),
         mappingName.trim(),
         className.trim(),
         parameter.trim()
