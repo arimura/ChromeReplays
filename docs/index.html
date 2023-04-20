@@ -71,16 +71,19 @@
     <pre id="jsonOutput"></pre>
   </div>
 
+  <script src="out.js"></script>
   <script>
     const generateJsonButton = document.getElementById('generateJsonButton');
     const downloadJsonButton = document.getElementById('downloadJsonButton');
     const jsonOutput = document.getElementById('jsonOutput');
 
     generateJsonButton.addEventListener('click', () => {
-      // Your code to convert TSV to JSON should be placed here
-      const json = { test: 'This is a sample JSON output.' };
+      const title = document.getElementById("titleInput").value;
+      const tsv = document.getElementById("tsvInput").value;
+      console.log("title: " + title);
+      console.log("tsv: " + tsv);
 
-      jsonOutput.textContent = JSON.stringify(json, null, 2);
+      jsonOutput.textContent =  chromeReplay.createAddingCustomEventReplyJSON(title, tsv);
       downloadJsonButton.style.display = 'block';
     });
 

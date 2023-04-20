@@ -1,6 +1,10 @@
 import { createAddingCustomEventReplySteps } from './adding-customevent-replay-steps';
 
 export function createAddingCustomEventReplyJSON(title:string, tsv: string) {
+  if (!title || title.trim().length === 0) {
+    return { error: 'Title cannot be null or empty' };
+  }
+  
   const steps: any[] = [];
   const lines = tsv.split('\n');
 
