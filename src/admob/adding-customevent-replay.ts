@@ -4,7 +4,7 @@ export function createAddingCustomEventReplyJSON(title:string, tsv: string) {
   if (!title || title.trim().length === 0) {
     return { error: 'Title cannot be null or empty' };
   }
-  
+
   const steps: any[] = [];
   const lines = tsv.split('\n');
 
@@ -12,8 +12,7 @@ export function createAddingCustomEventReplyJSON(title:string, tsv: string) {
     if (line.trim() === '') return; // Skip empty lines
 
     const [label, ecpm, mappingName, className, parameter] = line.split('\t');
-
-    const steps = createAddingCustomEventReplySteps(
+    const stepsFromLine = createAddingCustomEventReplySteps(
       label.trim(),
       parseFloat(ecpm.trim()),
       mappingName.trim(),
@@ -21,7 +20,7 @@ export function createAddingCustomEventReplyJSON(title:string, tsv: string) {
       parameter.trim()
     );
 
-    steps.push(...steps);
+    steps.push(...stepsFromLine);
   });
 
   return {
